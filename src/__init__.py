@@ -88,17 +88,31 @@ class AppTelemetria(tk.Tk):
         frame_pid = ttk.LabelFrame(self, text="Sintonia de Parâmetros PID", padding=10)
         frame_pid.grid(row=0, column=1, sticky="nsew", padx=10, pady=10)
         
-        #parâmetros Kp, Ki, Kd, Velocidade (provavelmente os que iremos usar)
-        parametros = ["Kp", "Ki", "Kd", "Velocidade"]
+        parametros_angular = ["Kp", "Kd"]
+        parametros_linear = ["Kp", "Ki"]
         self.entradas_pid = {}
-        
-        for i, param in enumerate(parametros):
-            ttk.Label(frame_pid, text=f"{param}:").grid(row=i, column=0, pady=5, sticky="e")
+
+        ttk.Label(frame_pid, text="Parâmetros Angulares:").grid(row=0, column=0, columnspan=2, pady=5, sticky="w")
+
+        for i, param in enumerate(parametros_angular):
+            row = i + 1
+            ttk.Label(frame_pid, text=f"{param}:").grid(row=row, column=0, pady=5, sticky="e")
             entry = ttk.Entry(frame_pid, width=15)
-            entry.grid(row=i, column=1, pady=5, padx=5)
-            self.entradas_pid[param] = entry
+            entry.grid(row=row, column=1, pady=5, padx=5)
+            self.entradas_pid[f"Angular_{param}"] = entry
             
-        ttk.Button(frame_pid, text="Enviar Parâmetros").grid(row=len(parametros), column=0, columnspan=2, pady=10)
+        ttk.Button(frame_pid, text="Enviar Parâmetros").grid(row=len(parametros_angular) + 1, column=0, columnspan=2, pady=10)
+
+        ttk.Label(frame_pid, text="Parâmetros Lineares:").grid(row=0, column=2, columnspan=2, pady=5, sticky="w", padx=(30, 0))
+
+        for i, param in enumerate(parametros_linear):
+            row = i + 1
+            ttk.Label(frame_pid, text=f"{param}:").grid(row=row, column=2, pady=5, sticky="e", padx=(30, 0))
+            entry = ttk.Entry(frame_pid, width=15)
+            entry.grid(row=row, column=3, pady=5, padx=5)
+            self.entradas_pid[f"Linear_{param}"] = entry
+            
+        ttk.Button(frame_pid, text="Enviar Parâmetros").grid(row=len(parametros_linear) + 1, column=2, columnspan=2, pady=10, padx=(30, 0))
 
     def criar_painel_grafico_1(self):
         """
