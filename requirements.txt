@@ -1,0 +1,5 @@
+matplotlib~=3.7.1 
+pyvirtualdisplay~=3.0 
+pyscreenshot~=3.1 
+Pillow~=10.0.0 
+ipython~=8.12.0
