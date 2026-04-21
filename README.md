@@ -58,8 +58,8 @@ O programa foi projetado para ser intuitivo. Siga os passos abaixo para utilizar
 * Clique no botão **Conectar** para iniciar a comunicação bidirecional.
 
 **2. Envio de Parâmetros de Controle (Painel Superior Direito)**
-* **Sintonia Angular:** Insira os valores nas caixas de texto correspondentes (Kp e Kd) e clique em **Enviar Angulares**.
-* **Sintonia Linear:** Insira os valores nas caixas de texto correspondentes (Kp e Ki) e clique em **Enviar Lineares**.
+* **Sintonia Angular:** Insira os valores nas caixas de texto correspondentes (Kp e Kd) e clique em **Enviar Parâmetros**.
+* **Sintonia Linear:** Insira os valores nas caixas de texto correspondentes (Kp e Ki) e clique em **Enviar Parâmetros**.
 * Os comandos são enviados instantaneamente ao ESP32 via BLE.
 
 **3. Configuração da Telemetria (Painel Inferior Direito)**
