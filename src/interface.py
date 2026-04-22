@@ -28,13 +28,14 @@ class AppTelemetria(tk.Tk):
     sintonia e visualização gráfica.
     """
 
-    def __init__(self):
+    def __init__(self, controlador):
         """
         Inicializa a janela principal da aplicação, define suas dimensões
         e configura o layout base dividindo a tela em painéis.
         """
         super().__init__() #foi utilizado super pois o tk.tk é a classe mãe da biblioteca Tkinter, a janela criada tem os atributos e métodos do tk.tk, mas pode ser customizada pelo usuário, ou seja, a classe AppTelemetria é uma extensão do tk.tk, e o super() é utilizado para chamar o método __init__ da classe mãe (tk.Tk) para garantir que a janela seja inicializada corretamente antes de adicionar os elementos personalizados.
 
+        self.controlador = controlador # Necessário para integração entre botões e o backend
         self.title("Telemetria e Sintonia BLE")
         self.geometry("1000x700")
 
