@@ -190,6 +190,3 @@ class AppTelemetria(tk.Tk):
         canvas = FigureCanvasTkAgg(fig, master=frame_g2)
         canvas.draw()
         canvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)
-
-app = AppTelemetria()
-app.mainloop()
